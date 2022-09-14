@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <div style="margin:15rem 10rem auto ;">
+        <p style="color: black;border-style: dashed;background-color:white;width: 100rem;height: 15rem;" id="haystack" placeholder="Enter text here">
+            আমি তোমাকেই বলে দেবো কি যে একা দীর্ঘ রাত আমি হেঁটে গেছি বিরান পথে আমি তোমাকেই বলে দেবো সেই ভুলে ভরা গল্প কড়া নেড়ে গেছি ভুল দরজায়
+            ছুঁয়ে কান্নার রঙ ছুঁয়ে জোছনার ছায়া ছুঁয়ে কান্নার রঙ ছুঁয়ে জোছনার ছায়া আমি তোমাকেই বলে দেবো কি যে একা দীর্ঘ রাত আমি হেঁটে গেছি বিরান পথে
+            আমি তোমাকেই বলে দেবো সেই ভুলে ভরা গল্প কড়া নেড়ে গেছি ভুল দরজায় ছুঁয়ে কান্নার রঙ ছুঁয়ে জোছনার ছায়া ছুঁয়ে কান্নার রঙ ছুঁয়ে জোছনার ছায়া আমি
+            কাউকে বলিনি সে নাম কেউ জানে না, না জানে আড়াল আমি কাউকে বলিনি সে নাম কেউ জানে না, না জানে আড়াল জানে কান্নার রঙ জানে জোছনার ছায়া 
+            জানে কান্নার রঙ জানে জোছনার ছায়া তবে এই হোক তীরে জাগুক প্লাবন দিন হোক লাবণ্য হৃদয়ে শ্রাবণ তবে এই হোক তীরে জাগুক প্লাবন দিন হোক লাবণ্য হৃদয়ে 
+            শ্রাবণ তুমি কান্নার রঙ তুমি জোছনার ছায়া তুমি কান্নার রঙ তুমি জোছনার ছায়া আমি তোমাকেই বলে দেবো কি যে একা দীর্ঘ রাত আমি হেঁটে গেছি বিরান পথে আমি 
+            তোমাকেই বলে দেবো সেই ভুলে ভরা গল্প কড়া নেড়ে গেছি ভুল দরজায় ছুঁয়ে কান্নার রঙ ছুঁয়ে জোছনার ছায়া ছুঁয়ে কান্নার রঙ ছুঁয়ে জোছনার ছায়া
+            আমি তোমাকেই বলে দেবো কি যে একা দীর্ঘ রাত আমি হেঁটে গেছি বিরান পথে আমি তোমাকেই বলে দেবো সেই ভুলে ভরা গল্প কড়া নেড়ে গেছি ভুল দরজায়
+            ছুঁয়ে কান্নার রঙ ছুঁয়ে জোছনার ছায়া ছুঁয়ে কান্নার রঙ ছুঁয়ে জোছনার ছায়া আমি তোমাকেই বলে দেবো কি যে একা দীর্ঘ রাত আমি হেঁটে গেছি বিরান পথে
+            আমি তোমাকেই বলে দেবো সেই ভুলে ভরা গল্প কড়া নেড়ে গেছি ভুল দরজায় ছুঁয়ে কান্নার রঙ ছুঁয়ে জোছনার ছায়া ছুঁয়ে কান্নার রঙ ছুঁয়ে জোছনার ছায়া আমি
+            কাউকে বলিনি সে নাম কেউ জানে না, না জানে আড়াল আমি কাউকে বলিনি সে নাম কেউ জানে না, না জানে আড়াল জানে কান্নার রঙ জানে জোছনার ছায়া 
+            জানে কান্নার রঙ জানে জোছনার ছায়া তবে এই হোক তীরে জাগুক প্লাবন দিন হোক লাবণ্য হৃদয়ে শ্রাবণ তবে এই হোক তীরে জাগুক প্লাবন দিন হোক লাবণ্য হৃদয়ে 
+            শ্রাবণ তুমি কান্নার রঙ তুমি জোছনার ছায়া তুমি কান্নার রঙ তুমি জোছনার ছায়া আমি তোমাকেই বলে দেবো কি যে একা দীর্ঘ রাত আমি হেঁটে গেছি বিরান পথে আমি 
+            তোমাকেই বলে দেবো সেই ভুলে ভরা গল্প কড়া নেড়ে গেছি ভুল দরজায় ছুঁয়ে কান্নার রঙ ছুঁয়ে জোছনার ছায়া ছুঁয়ে কান্নার রঙ ছুঁয়ে জোছনার ছায়া</p>
+    </div>
+    <div style="text-align:center;margin-top: 50px;">
+        <input style="padding:10px;font-family: Verdana;font-size: 15px;" type="text" id="needle" placeholder="Search Here">
+        <button style="border-radius:10px;padding:10px;background-color:yellow;font-family: Verdana;" id="search" onclick="search()">Find Needle</button>
+    </div>
+</body>
+
+<script>
+
+    const haystack = document.querySelector("#haystack");
+    const special = /[\\[{().+*?|^$]/g;
+
+    function search() {
+        let needle = document.querySelector("#needle").value;
+        
+
+        if(needle !== "") {
+            if(special.test(needle)) input = input.replace(special, "\\$&");
+            let regExp = new RegExp(needle, "gi");
+            haystack.innerHTML = (haystack.textContent).replace(regExp, "<mark>$&</mark>");
+        }
+    }
+</script>
+<style>
+body {
+    background-image: url("./Haystack.jpg");
+    background-color: #FFFF57;
+    background-size: 45%;
+    background-repeat:no-repeat;
+    background-position-x: center;
+    background-image: url('haystack.png');
+    background-repeat: repeat;
+}
+mark {
+    background-color: orange;
+}
+</style>
+</html>
