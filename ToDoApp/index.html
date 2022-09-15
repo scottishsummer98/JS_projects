@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>ToDoApp</title>
+</head>
+<body>
+    <div class="card mt-5" style="background-image: url('notepad.png');width: 19.8rem;height:28rem;">
+        <div class="row mt-5 p-4 ">
+            <div class="col-lg-9 col-md-9 col-sm-9">
+                <input type="text" id="myInput" placeholder="Type here" class="form-control">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <button onclick="newElement()" class="btn btn-success">Enter</button>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9">
+                <ul id="myUL" class="form-control">----My ToDo List----</ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+    body {
+        background-image: linear-gradient(to right, cyan , lightgreen, lightblue);
+        display: flex;
+        justify-content: center;
+    }
+
+    ul li {
+      cursor: pointer;
+      position: relative;
+      padding: .5rem;
+      list-style-type: none;
+      background: #eee;
+      font-size: 15px;
+      transition: 0.2s;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    ul li:hover {
+      background: #ddd;
+    }
+    ul li.checked {
+      background: rgb(29, 29, 29);
+      color: #fff;
+      text-decoration: line-through;
+    }
+    .del {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: .5rem;
+    }
+    .del:hover {
+      background-color: #f44336;
+      color: white;
+    }
+</style>
+
+<script>
+    var myNodelist = document.getElementsByTagName("LI");
+    var i;
+    for (i = 0; i < myNodelist.length; i++) {
+      var span = document.createElement("SPAN");
+      span.className = "del";
+      myNodelist[i].appendChild(span);
+    }
+    
+    var del = document.getElementsByClassName("del");
+    var i;
+    for (i = 0; i < del.length; i++) {
+        del[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+    
+    var list = document.querySelector('ul');
+    list.addEventListener('click', function(ev) {
+      if (ev.target.tagName === 'LI') {
+        ev.target.classList.toggle('checked');
+      }
+    }, false);
+    
+    function newElement() {
+        var li = document.createElement("li");
+        var inputValue = document.getElementById("myInput").value;
+        var t = document.createTextNode(inputValue);
+        li.appendChild(t);
+        if (inputValue === '') {
+            alert("Write a task first");
+        }
+        else {
+            document.getElementById("myUL").appendChild(li);
+        }
+        document.getElementById("myInput").value = "";
+    
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "del";
+        span.appendChild(txt);
+        li.appendChild(span);
+    
+        for (i = 0; i < del.length; i++) {
+            del[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+            }
+        }
+    }
+</script>
