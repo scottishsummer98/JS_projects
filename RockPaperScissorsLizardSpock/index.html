@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  
+    <title>RockPaperScissorsLizardSpock</title>
+</head>
+<body>
+    <div class="game">
+        <div class="score"> 
+            <div class="playerScore headings">
+                <h2>Player</h2>
+                <p class="p-count count">0</p>
+ 
+            </div>      
+            <div class="computerScore headings">
+                <h2>Computer</h2>
+                <p class="c-count count">0</p>
+ 
+            </div>
+        </div>
+        <div class="movesleft headings">Moves Left: 10 </div>
+        <div class="move headings ">Choose your move</div>
+        <div class="options headings">
+            <button class="rock">Rock</button>
+            <button class="paper">Paper</button>
+            <button class="scissor">Scissors</button>
+            <button class="lizard">Lizard</button>   
+            <button class="spock">Spock</button>   
+        </div>
+        <div class="result headings">
+        </div>
+        <button class="reload"></button>
+    </div>
+ 
+    <script src="app.js"></script>
+</body>
+</html>
+<style>
+    body {
+        background-image: linear-gradient(to right, #304d63, #B2E7E8, #8FB9AA, #F2D096, #ED8975);
+    }
+    ul li {
+        display: inline;
+    }
+    img {
+        border-radius: 50%;
+        width: 11rem;
+        height: 11rem;
+        object-fit: contain;
+    }
+    .game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+    .score {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: center;
+        gap: 5rem;
+        color: darkolivegreen;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .options {
+        margin-top: 5rem;
+    }
+    .headings {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: darkolivegreen;
+        text-align: center;
+        font-size: x-large;
+    }
+    .rock {
+        background-image: url('Rock.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 10rem;
+        height: 10rem;
+        color: transparent;
+        border: 5px solid transparent;
+        border-radius: 50%;
+    }
+    .paper {
+        background-image: url('Paper.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 10rem;
+        height: 10rem;
+        color: transparent;
+        border: 5px solid transparent;
+        border-radius: 50%;
+    }
+    .scissor {
+        background-image: url('Scissors.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 10rem;
+        height: 10rem;
+        color: transparent;
+        border: 5px solid transparent;
+        border-radius: 50%;
+    }
+    .lizard {
+        background-image: url('Lizard.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 10rem;
+        height: 10rem;
+        color: transparent;
+        border: 5px solid transparent;
+        border-radius: 50%;
+    }
+    .spock {
+        background-image: url('Spock.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 10rem;
+        height: 10rem;
+        color: transparent;
+        border: 5px solid transparent;
+        border-radius: 50%;
+    }
+    .reload {
+    display: none;
+    margin-top: 2rem;
+    padding: .5rem;
+    background: black;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+</style>
