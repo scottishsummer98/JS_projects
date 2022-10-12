@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Counter Game</title>
+  </head>
+  <body>
+    <div class="card" style="width: 40rem; margin: auto;">
+      <h1 style="font-family: Monospace; text-align: center;" id="timer">
+        Time Left: 30s
+      </h1>
+    </div>
+    <div class="card" style="width: 25rem; margin: auto;">
+      <h1 style="font-family: Monospace; text-align: center;" id="value">0</h1>
+    </div>
+    <div class="d-grid gap-2" style="width: 25rem; margin: auto;">
+      <button class="btn btn-group-lg btn-warning" onclick="Game()">
+        Click Me
+      </button>
+    </div>
+    <div class="d-grid gap-2" style="width: 25rem; margin: auto;">
+      <button
+        class="btn btn-group-lg btn-success"
+        onclick="setInterval(Timer,1000)"
+      >
+        Play
+      </button>
+    </div>
+    <div class="d-grid gap-2" style="width: 25rem; margin: auto;">
+      <button class="btn btn-group-lg btn-info" onclick="Reset()">
+        Start Over
+      </button>
+    </div>
+  </body>
+</html>
+
+<script>
+  let val = 0
+  let time = 30
+  function Game() {
+    if (time != 0) {
+      var value = document.querySelector('#value')
+      val++
+      value.textContent = val
+    } else {
+      window.alert('Game Over!! You Scored ' + val + '🎉🎉🎊🎊')
+      Reset()
+    }
+  }
+
+  function Timer() {
+    var timer = document.querySelector('#timer')
+    if (time > 0) {
+      time--
+      timer.textContent = 'Time Left: ' + time + 's'
+    }
+  }
+
+  function Reset() {
+    location.reload()
+  }
+</script>
+
+<style>
+  body {
+    background-image: linear-gradient(
+      to right,
+      #571845,
+      #900c3e,
+      #c70039,
+      #ff5733,
+      #ffc300
+    );
+    margin: 20rem;
+  }
+</style>
