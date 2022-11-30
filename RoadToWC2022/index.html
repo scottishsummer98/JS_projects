@@ -17,628 +17,642 @@
       />
       <img src="./Logo.png" alt="" style="width: 15rem;" />
     </div>
-    <h2
-      style="
-        color: white;
-        text-align: center;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      "
-    >
-      Pick Two Teams From Each Group
-    </h2>
-    <div class="table">
-      <div class="tableBox">
-        <h3 class="tableHeader">
-          Group A
-        </h3>
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
-            justify-content: center;
-          "
-        >
-          <div>
-            <img
-              src="./TeamFlags/Ecuador.png"
-              alt=""
-              id="Ecuador"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Ecuador
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Netherlands.png"
-              alt=""
-              id="Netherlands"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Netherlands
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Qatar.png"
-              alt=""
-              id="Qatar"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Qatar
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Senegal.png"
-              alt=""
-              id="Senegal"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Senegal
-            </h4>
-          </div>
-        </div>
-      </div>
-      <div class="tableBox">
-        <h3 class="tableHeader">Group B</h3>
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
-            justify-content: center;
-          "
-        >
-          <div>
-            <img
-              src="./TeamFlags/England.png"
-              alt=""
-              id="England"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              England
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Iran.png"
-              alt=""
-              id="Iran"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Iran
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/USA.png"
-              alt=""
-              id="USA"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              USA
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Wales.png"
-              alt=""
-              id="Wales"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Wales
-            </h4>
+    <div style="margin-top: 3rem;" id="groupStages">
+      <h1
+        style="
+          color: white;
+          text-align: center;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        "
+      >
+        Group Stages
+      </h1>
+      <h2
+        style="
+          color: white;
+          text-align: center;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        "
+      >
+        Pick Two Teams From Each Group
+      </h2>
+      <div class="table">
+        <div class="tableBox">
+          <h3 class="tableHeader">
+            Group A
+          </h3>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 2rem;
+              justify-content: center;
+            "
+          >
+            <div>
+              <img
+                src="./TeamFlags/Ecuador.png"
+                alt=""
+                id="Ecuador"
+                onclick="TeamPicker(this.id),PlayMusic()"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Ecuador
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Netherlands.png"
+                alt=""
+                id="Netherlands"
+                onclick="TeamPicker(this.id),PlayMusic()"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Netherlands
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Qatar.png"
+                alt=""
+                id="Qatar"
+                onclick="TeamPicker(this.id),PlayMusic()"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Qatar
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Senegal.png"
+                alt=""
+                id="Senegal"
+                onclick="TeamPicker(this.id),PlayMusic()"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Senegal
+              </h4>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="tableBox">
-        <h3 class="tableHeader">Group C</h3>
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
-            justify-content: center;
-          "
-        >
-          <div>
-            <img
-              src="./TeamFlags/Argentina.png"
-              alt=""
-              id="Argentina"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Argentina
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Mexico.png"
-              alt=""
-              id="Mexico"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Mexico
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Poland.png"
-              alt=""
-              id="Poland"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Poland
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/SaudiArabia.png"
-              alt=""
-              id="SaudiArabia"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Saudi Arabia
-            </h4>
-          </div>
-        </div>
-      </div>
-      <div class="tableBox">
-        <h3 class="tableHeader">Group D</h3>
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
-            justify-content: center;
-          "
-        >
-          <div>
-            <img
-              src="./TeamFlags/Australia.png"
-              alt=""
-              id="Australia"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Australia
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Denmark.png"
-              alt=""
-              id="Denmark"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Denmark
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/France.png"
-              alt=""
-              id="France"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              France
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Tunisia.png"
-              alt=""
-              id="Tunisia"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Tunisia
-            </h4>
+        <div class="tableBox">
+          <h3 class="tableHeader">Group B</h3>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 2rem;
+              justify-content: center;
+            "
+          >
+            <div>
+              <img
+                src="./TeamFlags/England.png"
+                alt=""
+                id="England"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                England
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Iran.png"
+                alt=""
+                id="Iran"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Iran
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/USA.png"
+                alt=""
+                id="USA"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                USA
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Wales.png"
+                alt=""
+                id="Wales"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Wales
+              </h4>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="tableBox">
-        <h3 class="tableHeader">Group E</h3>
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
-            justify-content: center;
-          "
-        >
-          <div>
-            <img
-              src="./TeamFlags/CostaRica.png"
-              alt=""
-              id="CostaRica"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Costa Rica
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Germany.png"
-              alt=""
-              id="Germany"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Germany
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Japan.png"
-              alt=""
-              id="Japan"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Japan
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Spain.png"
-              alt=""
-              id="Spain"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Spain
-            </h4>
+        <div class="tableBox">
+          <h3 class="tableHeader">Group C</h3>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 2rem;
+              justify-content: center;
+            "
+          >
+            <div>
+              <img
+                src="./TeamFlags/Argentina.png"
+                alt=""
+                id="Argentina"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Argentina
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Mexico.png"
+                alt=""
+                id="Mexico"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Mexico
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Poland.png"
+                alt=""
+                id="Poland"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Poland
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/SaudiArabia.png"
+                alt=""
+                id="SaudiArabia"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Saudi Arabia
+              </h4>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="tableBox">
-        <h3 class="tableHeader">Group F</h3>
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
-            justify-content: center;
-          "
-        >
-          <div>
-            <img
-              src="./TeamFlags/Belgium.png"
-              alt=""
-              id="Belgium"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Belgium
-            </h4>
+        <div class="tableBox">
+          <h3 class="tableHeader">Group D</h3>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 2rem;
+              justify-content: center;
+            "
+          >
+            <div>
+              <img
+                src="./TeamFlags/Australia.png"
+                alt=""
+                id="Australia"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Australia
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Denmark.png"
+                alt=""
+                id="Denmark"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Denmark
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/France.png"
+                alt=""
+                id="France"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                France
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Tunisia.png"
+                alt=""
+                id="Tunisia"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Tunisia
+              </h4>
+            </div>
           </div>
-          <div>
-            <img
-              src="./TeamFlags/Canada.png"
-              alt=""
-              id="Canada"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Canada
-            </h4>
+        </div>
+        <div class="tableBox">
+          <h3 class="tableHeader">Group E</h3>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 2rem;
+              justify-content: center;
+            "
+          >
+            <div>
+              <img
+                src="./TeamFlags/CostaRica.png"
+                alt=""
+                id="CostaRica"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Costa Rica
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Germany.png"
+                alt=""
+                id="Germany"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Germany
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Japan.png"
+                alt=""
+                id="Japan"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Japan
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Spain.png"
+                alt=""
+                id="Spain"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Spain
+              </h4>
+            </div>
           </div>
+        </div>
+        <div class="tableBox">
+          <h3 class="tableHeader">Group F</h3>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 2rem;
+              justify-content: center;
+            "
+          >
+            <div>
+              <img
+                src="./TeamFlags/Belgium.png"
+                alt=""
+                id="Belgium"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Belgium
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Canada.png"
+                alt=""
+                id="Canada"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Canada
+              </h4>
+            </div>
 
-          <div>
-            <img
-              src="./TeamFlags/Croatia.png"
-              alt=""
-              id="Croatia"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Croatia
-            </h4>
-          </div>
+            <div>
+              <img
+                src="./TeamFlags/Croatia.png"
+                alt=""
+                id="Croatia"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Croatia
+              </h4>
+            </div>
 
-          <div>
-            <img
-              src="./TeamFlags/Morocco.png"
-              alt=""
-              id="Morocco"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Morocco
-            </h4>
+            <div>
+              <img
+                src="./TeamFlags/Morocco.png"
+                alt=""
+                id="Morocco"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Morocco
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="tableBox">
+          <h3 class="tableHeader">Group G</h3>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 2rem;
+              justify-content: center;
+            "
+          >
+            <div>
+              <img
+                src="./TeamFlags/Brazil.png"
+                alt=""
+                id="Brazil"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Brazil
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Cameroon.png"
+                alt=""
+                id="Cameroon"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Cameroon
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Serbia.png"
+                alt=""
+                id="Serbia"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Serbia
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Switzerland.png"
+                alt=""
+                id="Switzerland"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Switzerland
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="tableBox">
+          <h3 class="tableHeader">Group H</h3>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 2rem;
+              justify-content: center;
+            "
+          >
+            <div>
+              <img
+                src="./TeamFlags/Ghana.png"
+                alt=""
+                id="Ghana"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Ghana
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Portugal.png"
+                alt=""
+                id="Portugal"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Portugal
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/SouthKorea.png"
+                alt=""
+                id="SouthKorea"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                South Korea
+              </h4>
+            </div>
+            <div>
+              <img
+                src="./TeamFlags/Uruguay.png"
+                alt=""
+                id="Uruguay"
+                onclick="TeamPicker(this.id)"
+              />
+              <h4
+                style="
+                  color: white;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                "
+              >
+                Uruguay
+              </h4>
+            </div>
           </div>
         </div>
       </div>
-      <div class="tableBox">
-        <h3 class="tableHeader">Group G</h3>
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
-            justify-content: center;
-          "
-        >
-          <div>
-            <img
-              src="./TeamFlags/Brazil.png"
-              alt=""
-              id="Brazil"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Brazil
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Cameroon.png"
-              alt=""
-              id="Cameroon"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Cameroon
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Serbia.png"
-              alt=""
-              id="Serbia"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Serbia
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Switzerland.png"
-              alt=""
-              id="Switzerland"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Switzerland
-            </h4>
-          </div>
-        </div>
-      </div>
-      <div class="tableBox">
-        <h3 class="tableHeader">Group H</h3>
-        <div
-          style="
-            display: flex;
-            flex-direction: row;
-            gap: 2rem;
-            justify-content: center;
-          "
-        >
-          <div>
-            <img
-              src="./TeamFlags/Ghana.png"
-              alt=""
-              id="Ghana"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Ghana
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Portugal.png"
-              alt=""
-              id="Portugal"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Portugal
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/SouthKorea.png"
-              alt=""
-              id="SouthKorea"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              South Korea
-            </h4>
-          </div>
-          <div>
-            <img
-              src="./TeamFlags/Uruguay.png"
-              alt=""
-              id="Uruguay"
-              onclick="TeamPicker(this.id)"
-            />
-            <h4
-              style="
-                color: white;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
-              Uruguay
-            </h4>
-          </div>
-        </div>
-      </div>
+    </div>
+    <div class="hide" id="ro16">
+      <h4>Hello</h4>
     </div>
   </body>
 </html>
@@ -668,6 +682,12 @@
   .bg {
     background-color: yellow;
   }
+  .show {
+    display: block;
+  }
+  .hide {
+    display: none;
+  }
 </style>
 <script>
   const boxes = document.querySelectorAll(
@@ -676,7 +696,7 @@
 
   for (const box of boxes) {
     box.addEventListener('click', function handleClick() {
-      box.classList.add('bg')
+      box.classList.toggle('bg')
     })
   }
   const grpA = []
@@ -812,13 +832,19 @@
         grpH.push(id)
       }
     }
-    console.log(grpA)
-    console.log(grpB)
-    console.log(grpC)
-    console.log(grpD)
-    console.log(grpE)
-    console.log(grpF)
-    console.log(grpG)
-    console.log(grpH)
+    if (
+      grpA.length == 2 &&
+      grpB.length == 2 &&
+      grpC.length == 2 &&
+      grpD.length == 2 &&
+      grpE.length == 2 &&
+      grpF.length == 2 &&
+      grpG.length == 2 &&
+      grpH.length == 2
+    ) {
+      document.getElementById('groupStages').classList = 'hide'
+      document.getElementById('ro16').classList = 'show'
+      window.alert('Done Group Stages!!')
+    }
   }
 </script>
