@@ -983,11 +983,11 @@
           "
         >
           <div style="display: flex; align-items: center;">
-            <img alt="" id="sfT1Img" />
+            <img alt="" id="sfT1Img" onclick="TeamPickerFinals(this.id)" />
             <h4 class="Header" style="margin-left: 0.5rem;" id="sfT1"></h4>
           </div>
           <div style="display: flex; align-items: center;">
-            <img alt="" id="sfT2Img" />
+            <img alt="" id="sfT2Img" onclick="TeamPickerFinals(this.id)" />
             <h4 class="Header" style="margin-left: 0.5rem;" id="sfT2"></h4>
           </div>
         </div>
@@ -1004,11 +1004,11 @@
           "
         >
           <div style="display: flex; align-items: center; float: right;">
-            <img alt="" id="sfT3Img" />
+            <img alt="" id="sfT3Img" onclick="TeamPickerFinals(this.id)" />
             <h4 class="Header" style="margin-left: 0.5rem;" id="sfT3"></h4>
           </div>
           <div style="display: flex; align-items: center; float: right;">
-            <img alt="" id="sfT4Img" />
+            <img alt="" id="sfT4Img" onclick="TeamPickerFinals(this.id)" />
             <h4 class="Header" style="margin-left: 0.5rem;" id="sfT4"></h4>
           </div>
         </div>
@@ -1028,10 +1028,8 @@
           "
         >
           <div style="display: flex; align-items: center;">
-            <img src="./TeamFlags/Cameroon.png" alt="" />
-            <h4 class="Header" style="margin-left: 0.5rem;" id="ro16T1">
-              Cameroon
-            </h4>
+            <img alt="" id="fT1Img" />
+            <h4 class="Header" style="margin-left: 0.5rem;" id="ro16T1"></h4>
           </div>
         </div>
       </div>
@@ -1048,10 +1046,8 @@
           "
         >
           <div style="display: flex; align-items: center; float: right;">
-            <img src="./TeamFlags/Cameroon.png" alt="" />
-            <h4 class="Header" style="margin-left: 0.5rem;" id="ro16T1">
-              Cameroon
-            </h4>
+            <img alt="" id="fT2Img" />
+            <h4 class="Header" style="margin-left: 0.5rem;" id="ro16T1"></h4>
           </div>
         </div>
       </div>
@@ -1474,6 +1470,25 @@
       var team = document.getElementById('' + teamname + '')
       var sfT4 = document.querySelector('#sfT4')
       sfT4.textContent = team.textContent
+    }
+  }
+  function TeamPickerFinals(id) {
+    if (id == 'sfT1Img' || id == 'sfT2Img') {
+      var teamname = id.slice(0, -3)
+      var img = document.getElementById('' + id + '').src
+      var fT1Img = document.getElementById('fT1Img')
+      fT1Img.src = img
+      var team = document.getElementById('' + teamname + '')
+      var fT1 = document.querySelector('#fT1')
+      fT1.textContent = team.textContent
+    } else if (id == 'sfT3Img' || id == 'sfT4Img') {
+      var teamname = id.slice(0, -3)
+      var img = document.getElementById('' + id + '').src
+      var fT2Img = document.getElementById('fT2Img')
+      fT2Img.src = img
+      var team = document.getElementById('' + teamname + '')
+      var fT2 = document.querySelector('#fT2')
+      fT2.textContent = team.textContent
     }
   }
 </script>
