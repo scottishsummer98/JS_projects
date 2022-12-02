@@ -1028,8 +1028,8 @@
           "
         >
           <div style="display: flex; align-items: center;">
-            <img alt="" id="fT1Img" />
-            <h4 class="Header" style="margin-left: 0.5rem;" id="ro16T1"></h4>
+            <img alt="" id="fT1Img" onclick="TeamPickerWinner(this.id)" />
+            <h4 class="Header" style="margin-left: 0.5rem;" id="fT1"></h4>
           </div>
         </div>
       </div>
@@ -1046,8 +1046,8 @@
           "
         >
           <div style="display: flex; align-items: center; float: right;">
-            <img alt="" id="fT2Img" />
-            <h4 class="Header" style="margin-left: 0.5rem;" id="ro16T1"></h4>
+            <img alt="" id="fT2Img" onclick="TeamPickerWinner(this.id)" />
+            <h4 class="Header" style="margin-left: 0.5rem;" id="fT2"></h4>
           </div>
         </div>
       </div>
@@ -1063,8 +1063,8 @@
       class="hide"
     >
       <h4 class="Header">CHAMPION</h4>
-      <img src="./TeamFlags/Argentina.png" alt="" />
-      <h4 class="Header">Cameroon</h4>
+      <img alt="" id="champImg" />
+      <h4 class="Header" id="champ"></h4>
     </div>
   </body>
 </html>
@@ -1490,5 +1490,14 @@
       var fT2 = document.querySelector('#fT2')
       fT2.textContent = team.textContent
     }
+  }
+  function TeamPickerWinner(id) {
+    var teamname = id.slice(0, -3)
+    var img = document.getElementById('' + id + '').src
+    var champImg = document.getElementById('champImg')
+    champImg.src = img
+    var team = document.getElementById('' + teamname + '')
+    var champ = document.querySelector('#champ')
+    champ.textContent = team.textContent
   }
 </script>
