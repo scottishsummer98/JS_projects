@@ -899,11 +899,11 @@
           "
         >
           <div style="display: flex; align-items: center;">
-            <img alt="" id="qfT1Img" />
+            <img alt="" id="qfT1Img" onclick="TeamPickerSemiFinals(this.id)" />
             <h4 class="Header" style="margin-left: 0.5rem;" id="qfT1"></h4>
           </div>
           <div style="display: flex; align-items: center;">
-            <img alt="" id="qfT2Img" />
+            <img alt="" id="qfT2Img" onclick="TeamPickerSemiFinals(this.id)" />
             <h4 class="Header" style="margin-left: 0.5rem;" id="qfT2"></h4>
           </div>
         </div>
@@ -919,11 +919,11 @@
           "
         >
           <div style="display: flex; align-items: center;">
-            <img alt="" id="qfT3Img" />
+            <img alt="" id="qfT3Img" onclick="TeamPickerSemiFinals(this.id)" />
             <h4 class="Header" style="margin-left: 0.5rem;" id="qfT3"></h4>
           </div>
           <div style="display: flex; align-items: center;">
-            <img alt="" id="qfT4Img" />
+            <img alt="" id="qfT4Img" onclick="TeamPickerSemiFinals(this.id)" />
             <h4 class="Header" style="margin-left: 0.5rem;" id="qfT4"></h4>
           </div>
         </div>
@@ -934,17 +934,17 @@
             background-color: rgb(168, 36, 64);
             display: flex;
             flex-direction: column;
-            padding-right: 0.5rem;
+            padding-left: 0.5rem;
             border: 3px solid transparent;
             border-radius: 10px;
           "
         >
           <div style="display: flex; align-items: center; float: right;">
-            <img alt="" id="qfT5Img" />
+            <img alt="" id="qfT5Img" onclick="TeamPickerSemiFinals(this.id)" />
             <h4 class="Header" style="margin-left: 0.5rem;" id="qfT5"></h4>
           </div>
           <div style="display: flex; align-items: center; float: right;">
-            <img alt="" id="qfT6Img" />
+            <img alt="" id="qfT6Img" onclick="TeamPickerSemiFinals(this.id)" />
             <h4 class="Header" style="margin-left: 0.5rem;" id="qfT6"></h4>
           </div>
         </div>
@@ -953,18 +953,18 @@
             background-color: rgb(168, 36, 64);
             display: flex;
             flex-direction: column;
-            padding-right: 0.5rem;
+            padding-left: 0.5rem;
             margin-top: 14em;
             border: 3px solid transparent;
             border-radius: 10px;
           "
         >
           <div style="display: flex; align-items: center; float: right;">
-            <img alt="" id="qfT7Img" />
+            <img alt="" id="qfT7Img" onclick="TeamPickerSemiFinals(this.id)" />
             <h4 class="Header" style="margin-left: 0.5rem;" id="qfT7"></h4>
           </div>
           <div style="display: flex; align-items: center; float: right;">
-            <img alt="" id="qfT8Img" />
+            <img alt="" id="qfT8Img" onclick="TeamPickerSemiFinals(this.id)" />
             <h4 class="Header" style="margin-left: 0.5rem;" id="qfT8"></h4>
           </div>
         </div>
@@ -977,22 +977,18 @@
             background-color: rgb(168, 36, 64);
             display: flex;
             flex-direction: column;
-            align-items: center;
+            padding-left: 0.5rem;
             border: 3px solid transparent;
             border-radius: 10px;
           "
         >
           <div style="display: flex; align-items: center;">
-            <img src="./TeamFlags/Cameroon.png" alt="" />
-            <h4 class="Header" style="margin-left: 0.5rem;" id="ro16T1">
-              Cameroon
-            </h4>
+            <img alt="" id="sfT1Img" />
+            <h4 class="Header" style="margin-left: 0.5rem;" id="sfT1"></h4>
           </div>
           <div style="display: flex; align-items: center;">
-            <img src="./TeamFlags/Cameroon.png" alt="" />
-            <h4 class="Header" style="margin-left: 0.5rem;" id="ro16T1">
-              Cameroon
-            </h4>
+            <img alt="" id="sfT2Img" />
+            <h4 class="Header" style="margin-left: 0.5rem;" id="sfT2"></h4>
           </div>
         </div>
       </div>
@@ -1002,22 +998,18 @@
             background-color: rgb(168, 36, 64);
             display: flex;
             flex-direction: column;
-            align-items: center;
+            padding-left: 0.5rem;
             border: 3px solid transparent;
             border-radius: 10px;
           "
         >
           <div style="display: flex; align-items: center; float: right;">
-            <img src="./TeamFlags/Cameroon.png" alt="" />
-            <h4 class="Header" style="margin-left: 0.5rem;" id="ro16T1">
-              Cameroon
-            </h4>
+            <img alt="" id="sfT3Img" />
+            <h4 class="Header" style="margin-left: 0.5rem;" id="sfT3"></h4>
           </div>
           <div style="display: flex; align-items: center; float: right;">
-            <img src="./TeamFlags/Cameroon.png" alt="" />
-            <h4 class="Header" style="margin-left: 0.5rem;" id="ro16T1">
-              Cameroon
-            </h4>
+            <img alt="" id="sfT4Img" />
+            <h4 class="Header" style="margin-left: 0.5rem;" id="sfT4"></h4>
           </div>
         </div>
       </div>
@@ -1447,6 +1439,41 @@
       var team = document.getElementById('' + teamname + '')
       var qfT8 = document.querySelector('#qfT8')
       qfT8.textContent = team.textContent
+    }
+  }
+  function TeamPickerSemiFinals(id) {
+    if (id == 'qfT1Img' || id == 'qfT2Img') {
+      var teamname = id.slice(0, -3)
+      var img = document.getElementById('' + id + '').src
+      var sfT1Img = document.getElementById('sfT1Img')
+      sfT1Img.src = img
+      var team = document.getElementById('' + teamname + '')
+      var sfT1 = document.querySelector('#sfT1')
+      sfT1.textContent = team.textContent
+    } else if (id == 'qfT3Img' || id == 'qfT4Img') {
+      var teamname = id.slice(0, -3)
+      var img = document.getElementById('' + id + '').src
+      var sfT2Img = document.getElementById('sfT2Img')
+      sfT2Img.src = img
+      var team = document.getElementById('' + teamname + '')
+      var sfT2 = document.querySelector('#sfT2')
+      sfT2.textContent = team.textContent
+    } else if (id == 'qfT5Img' || id == 'qfT6Img') {
+      var teamname = id.slice(0, -3)
+      var img = document.getElementById('' + id + '').src
+      var sfT3Img = document.getElementById('sfT3Img')
+      sfT3Img.src = img
+      var team = document.getElementById('' + teamname + '')
+      var sfT3 = document.querySelector('#sfT3')
+      sfT3.textContent = team.textContent
+    } else if (id == 'qfT7Img' || id == 'qfT8Img') {
+      var teamname = id.slice(0, -3)
+      var img = document.getElementById('' + id + '').src
+      var sfT4Img = document.getElementById('sfT4Img')
+      sfT4Img.src = img
+      var team = document.getElementById('' + teamname + '')
+      var sfT4 = document.querySelector('#sfT4')
+      sfT4.textContent = team.textContent
     }
   }
 </script>
