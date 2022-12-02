@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RoadToWC2022</title>
+    <script src="confetti.js"></script>
   </head>
   <body>
     <div class="header">
@@ -651,7 +652,7 @@
         </div>
       </div>
     </div>
-    <div id="ro16">
+    <div id="ro16" class="hide">
       <div class="ro16Box" style="float: left;">
         <div
           style="
@@ -886,7 +887,7 @@
         </div>
       </div>
     </div>
-    <div id="quarterfinals" style="margin-top: 5rem;">
+    <div id="quarterfinals" style="margin-top: 5rem;" class="hide">
       <div class="quarterfinalsBox" style="float: left;">
         <div
           style="
@@ -970,7 +971,7 @@
         </div>
       </div>
     </div>
-    <div id="semifinals" style="margin-top: 15rem;">
+    <div id="semifinals" class="hide" style="margin-top: 15rem;">
       <div class="semiinalsBox" style="float: left;">
         <div
           style="
@@ -1015,7 +1016,7 @@
       </div>
     </div>
     <br />
-    <div id="finals" style="margin-top: 1rem;">
+    <div id="finals" class="hide" style="margin-top: 1rem;">
       <div class="finalsBox" style="float: left;">
         <div
           style="
@@ -1028,7 +1029,7 @@
           "
         >
           <div style="display: flex; align-items: center;">
-            <img alt="" id="fT1Img" onclick="TeamPickerWinner(this.id)" />
+            <img alt="" id="fT1Img" onclick="TeamPickerChampion(this.id)" />
             <h4 class="Header" style="margin-left: 0.5rem;" id="fT1"></h4>
           </div>
         </div>
@@ -1046,7 +1047,7 @@
           "
         >
           <div style="display: flex; align-items: center; float: right;">
-            <img alt="" id="fT2Img" onclick="TeamPickerWinner(this.id)" />
+            <img alt="" id="fT2Img" onclick="TeamPickerChampion(this.id)" />
             <h4 class="Header" style="margin-left: 0.5rem;" id="fT2"></h4>
           </div>
         </div>
@@ -1062,7 +1063,7 @@
       "
       class="hide"
     >
-      <h4 class="Header">CHAMPION</h4>
+      <h4 class="Header" id="winnerheader"></h4>
       <img alt="" id="champImg" />
       <h4 class="Header" id="champ"></h4>
     </div>
@@ -1278,8 +1279,8 @@
       grpG.length == 2 &&
       grpH.length == 2
     ) {
-      // document.getElementById('groupStages').classList = 'hide'
-      // document.getElementById('ro16').classList = 'show'
+      document.getElementById('groupStages').classList = 'hide'
+      document.getElementById('ro16').classList = 'show'
 
       const grpAC = grpA[0]
       var ro16T1Img = document.getElementById('ro16T1Img')
@@ -1372,6 +1373,7 @@
   }
   function TeamPickerQuarterFinals(id) {
     if (id == 'ro16T1Img' || id == 'ro16T2Img') {
+      document.getElementById('quarterfinals').classList = 'show'
       var teamname = id.slice(0, -3)
       var img = document.getElementById('' + id + '').src
       var qfT1Img = document.getElementById('qfT1Img')
@@ -1380,6 +1382,7 @@
       var qfT1 = document.querySelector('#qfT1')
       qfT1.textContent = team.textContent
     } else if (id == 'ro16T5Img' || id == 'ro16T6Img') {
+      document.getElementById('quarterfinals').classList = 'show'
       var teamname = id.slice(0, -3)
       var img = document.getElementById('' + id + '').src
       var qfT2Img = document.getElementById('qfT2Img')
@@ -1388,6 +1391,7 @@
       var qfT2 = document.querySelector('#qfT2')
       qfT2.textContent = team.textContent
     } else if (id == 'ro16T9Img' || id == 'ro16T10Img') {
+      document.getElementById('quarterfinals').classList = 'show'
       var teamname = id.slice(0, -3)
       var img = document.getElementById('' + id + '').src
       var qfT3Img = document.getElementById('qfT3Img')
@@ -1396,6 +1400,7 @@
       var qfT3 = document.querySelector('#qfT3')
       qfT3.textContent = team.textContent
     } else if (id == 'ro16T13Img' || id == 'ro16T14Img') {
+      document.getElementById('quarterfinals').classList = 'show'
       var teamname = id.slice(0, -3)
       var img = document.getElementById('' + id + '').src
       var qfT4Img = document.getElementById('qfT4Img')
@@ -1404,6 +1409,7 @@
       var qfT4 = document.querySelector('#qfT4')
       qfT4.textContent = team.textContent
     } else if (id == 'ro16T3Img' || id == 'ro16T4Img') {
+      document.getElementById('quarterfinals').classList = 'show'
       var teamname = id.slice(0, -3)
       var img = document.getElementById('' + id + '').src
       var qfT5Img = document.getElementById('qfT5Img')
@@ -1412,6 +1418,7 @@
       var qfT5 = document.querySelector('#qfT5')
       qfT5.textContent = team.textContent
     } else if (id == 'ro16T7Img' || id == 'ro16T8Img') {
+      document.getElementById('quarterfinals').classList = 'show'
       var teamname = id.slice(0, -3)
       var img = document.getElementById('' + id + '').src
       var qfT6Img = document.getElementById('qfT6Img')
@@ -1420,6 +1427,7 @@
       var qfT6 = document.querySelector('#qfT6')
       qfT6.textContent = team.textContent
     } else if (id == 'ro16T11Img' || id == 'ro16T12Img') {
+      document.getElementById('quarterfinals').classList = 'show'
       var teamname = id.slice(0, -3)
       var img = document.getElementById('' + id + '').src
       var qfT7Img = document.getElementById('qfT7Img')
@@ -1428,6 +1436,7 @@
       var qfT7 = document.querySelector('#qfT7')
       qfT7.textContent = team.textContent
     } else if (id == 'ro16T15Img' || id == 'ro16T16Img') {
+      document.getElementById('quarterfinals').classList = 'show'
       var teamname = id.slice(0, -3)
       var img = document.getElementById('' + id + '').src
       var qfT8Img = document.getElementById('qfT8Img')
@@ -1439,6 +1448,7 @@
   }
   function TeamPickerSemiFinals(id) {
     if (id == 'qfT1Img' || id == 'qfT2Img') {
+      document.getElementById('semifinals').classList = 'show'
       var teamname = id.slice(0, -3)
       var img = document.getElementById('' + id + '').src
       var sfT1Img = document.getElementById('sfT1Img')
@@ -1447,6 +1457,7 @@
       var sfT1 = document.querySelector('#sfT1')
       sfT1.textContent = team.textContent
     } else if (id == 'qfT3Img' || id == 'qfT4Img') {
+      document.getElementById('semifinals').classList = 'show'
       var teamname = id.slice(0, -3)
       var img = document.getElementById('' + id + '').src
       var sfT2Img = document.getElementById('sfT2Img')
@@ -1455,6 +1466,7 @@
       var sfT2 = document.querySelector('#sfT2')
       sfT2.textContent = team.textContent
     } else if (id == 'qfT5Img' || id == 'qfT6Img') {
+      document.getElementById('semifinals').classList = 'show'
       var teamname = id.slice(0, -3)
       var img = document.getElementById('' + id + '').src
       var sfT3Img = document.getElementById('sfT3Img')
@@ -1463,6 +1475,7 @@
       var sfT3 = document.querySelector('#sfT3')
       sfT3.textContent = team.textContent
     } else if (id == 'qfT7Img' || id == 'qfT8Img') {
+      document.getElementById('semifinals').classList = 'show'
       var teamname = id.slice(0, -3)
       var img = document.getElementById('' + id + '').src
       var sfT4Img = document.getElementById('sfT4Img')
@@ -1474,6 +1487,7 @@
   }
   function TeamPickerFinals(id) {
     if (id == 'sfT1Img' || id == 'sfT2Img') {
+      document.getElementById('finals').classList = 'show'
       var teamname = id.slice(0, -3)
       var img = document.getElementById('' + id + '').src
       var fT1Img = document.getElementById('fT1Img')
@@ -1482,6 +1496,7 @@
       var fT1 = document.querySelector('#fT1')
       fT1.textContent = team.textContent
     } else if (id == 'sfT3Img' || id == 'sfT4Img') {
+      document.getElementById('finals').classList = 'show'
       var teamname = id.slice(0, -3)
       var img = document.getElementById('' + id + '').src
       var fT2Img = document.getElementById('fT2Img')
@@ -1491,7 +1506,7 @@
       fT2.textContent = team.textContent
     }
   }
-  function TeamPickerWinner(id) {
+  function TeamPickerChampion(id) {
     var teamname = id.slice(0, -3)
     var img = document.getElementById('' + id + '').src
     var champImg = document.getElementById('champImg')
@@ -1499,5 +1514,14 @@
     var team = document.getElementById('' + teamname + '')
     var champ = document.querySelector('#champ')
     champ.textContent = team.textContent
+    var winnerheader = document.querySelector('#winnerheader')
+    winnerheader.textContent = 'CHAMPION'
+    startConfetti()
+    reload()
+  }
+  function reload() {
+    setTimeout(() => {
+      location.reload()
+    }, 30000)
   }
 </script>
