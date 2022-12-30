@@ -29,7 +29,7 @@
   navigator.geolocation.getCurrentPosition(initMap)
   function initMap(pos) {
     const map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 13,
+      zoom: 18,
       center: { lat: pos.coords.latitude, lng: pos.coords.longitude },
     })
     const trafficLayer = new google.maps.TrafficLayer()
