@@ -8,33 +8,36 @@
   </head>
   <body>
     <script>
-      var number = prompt('What is your number?')
+      var uinput = prompt('What is your number?')
+      var number = parseInt(uinput)
+      var grade
       if (number >= 0 && number <= 100) {
         if (number >= 60 && number <= 100) {
           if (number >= 93) {
-            alert('Your Grade: A')
+            grade = 'A'
           } else if (number >= 90 && number <= 92) {
-            alert('Your Grade: A-')
+            grade = 'A-'
           } else if (number >= 87 && number <= 89) {
-            alert('Your Grade: B+')
+            grade = 'B+'
           } else if (number >= 83 && number <= 86) {
-            alert('Your Grade: B')
+            grade = 'B'
           } else if (number >= 80 && number <= 82) {
-            alert('Your Grade: B-')
+            grade = 'B-'
           } else if (number >= 77 && number <= 79) {
-            alert('Your Grade: C+')
+            grade = 'C+'
           } else if (number >= 73 && number <= 76) {
-            alert('Your Grade: C')
+            grade = 'C'
           } else if (number >= 70 && number <= 72) {
-            alert('Your Grade: C-')
+            grade = 'C-'
           } else if (number >= 67 && number <= 69) {
-            alert('Your Grade: D+')
+            grade = 'D+'
           } else if (number >= 60 && number <= 66) {
-            alert('Your Grade: D')
+            grade = 'D'
           }
         } else {
-          alert('Your Grade: F')
+          grade = 'F'
         }
+        alert(`Your Grade: ${grade}`)
       } else {
         alert('Invalid Input!')
       }
