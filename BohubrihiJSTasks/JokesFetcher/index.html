@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CNJ (Bohubrihi)</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+      integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h3>Use Restful API with AJAX</h3>
+      <button id="btn_Jokes">Get Jokes</button>
+      <p id="result"></p>
+    </div>
+  </body>
+</html>
+<script>
+  let getJokes = (e) => {
+    let xhr = new XMLHttpRequest()
+    xhr.open('GET', `https://api.chucknorris.io/jokes/random`, true)
+    xhr.onprogress = function () {
+      document.getElementById('result').innerText = 'Loading..............'
+    }
+    xhr.onload = function () {
+      if (this.status === 200) {
+        let data = JSON.parse(this.responseText)
+        let Joke = data.value
+        document.getElementById('result').innerText = Joke
+      }
+    }
+    xhr.send()
+  }
+  document.getElementById('btn_Jokes').addEventListener('click', getJokes)
+</script>
