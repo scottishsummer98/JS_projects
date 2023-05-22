@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager (Bohubrihi)</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+      integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h3>Task List</h3>
+      <input type="text" placeholder="New Task" id="task_input" />
+      <button id="add_task_btn">Add Task</button>
+      <hr />
+      <h3>Tasks</h3>
+      <div>
+        <input type="text" placeholder="Filter Task" id="filter_task_input" />
+        <ul>
+          <div id="task_list"></div>
+        </ul>
+        <button id="clear_task_btn">Clear Task</button>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  let taskArr = []
+
+  let AddTask = () => {
+    let task = document.getElementById('task_input').value
+    taskArr.push(task)
+    GetTask()
+  }
+
+  let DeleteTask = (taskindex) => {
+    if (confirm('Are you sure you want to delete this task?') == true) {
+      if (taskindex > -1) {
+        taskArr.splice(taskindex, 1)
+      }
+      GetTask()
+    }
+  }
+  let ClearTask = () => {
+    taskArr = []
+    document.getElementById('task_list').innerHTML = ''
+  }
+
+  let GetTask = () => {
+    let result = ''
+    taskArr.forEach(function (task, taskIndex) {
+      result += `<li>${task}  <a href="#" onclick='return DeleteTask(${taskIndex})'>X</a></li>`
+    })
+    document.getElementById('task_list').innerHTML = result
+  }
+
+  let SearchTask = () => {
+    let searchkey = document.getElementById('filter_task_input').value
+    let searchtaskArr = taskArr.filter((e) => e.includes(searchkey))
+    let result = ''
+    searchtaskArr.forEach(function (searchTask, searchTaskIndex) {
+      result += `<li>${searchTask} </li>`
+    })
+    document.getElementById('task_list').innerHTML = result
+  }
+
+  document.getElementById('add_task_btn').addEventListener('click', AddTask)
+  document.getElementById('clear_task_btn').addEventListener('click', ClearTask)
+  document
+    .getElementById('filter_task_input')
+    .addEventListener('keyup', SearchTask)
+</script>
