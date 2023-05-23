@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book List Keeper (Bohubrihi)</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+      integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h3>Add Book</h3>
+      <p id="notifications"></p>
+      <form action="" method="post" id="myForm">
+        <label for="Title">Title</label>
+        <input type="text" style="width: 100%;" id="form_title" />
+        <label for="Author">Author</label>
+        <input type="text" style="width: 100%;" id="form_author" />
+        <label for="ISBN">ISBN#</label>
+        <input type="text" style="width: 100%;" id="form_isbn" />
+      </form>
+      <button style="width: 100%;" id="add_book_btn">
+        SUBMIT
+      </button>
+      <hr />
+      <table style="width: 100%;">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN#</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="book_lists"></tbody>
+      </table>
+    </div>
+  </body>
+</html>
+<script>
+  const bookArr = []
+  let AddBook = () => {
+    var form = document.querySelector('#myForm')
+    var elements = form.elements
+    var elemsArr1 = Array.from(elements)
+    var book = {
+      title: elemsArr1[0].value,
+      author: elemsArr1[1].value,
+      isbn: elemsArr1[2].value,
+    }
+    bookArr.push(book)
+    SweetAlert('success', 'Book Entry Added!', 'green', 'white')
+
+    GetBookList()
+  }
+  let GetBookList = () => {
+    let result = ''
+    bookArr.forEach(function (book, bookindex) {
+      result += `<tr><td>${book.title}</td><td>${book.author}</td><td>${book.isbn}</td><td><a href="#" onclick='return DeleteBookEntry(${bookindex})'>X</a></td></tr>`
+    })
+    document.getElementById('book_lists').innerHTML = result
+  }
+  let DeleteBookEntry = (bookindex) => {
+    if (confirm('Are you sure you want to delete this entry?') == true) {
+      if (bookindex > -1) {
+        bookArr.splice(bookindex, 1)
+      }
+      SweetAlert('failure', 'Book Entry Deleted!', 'red', 'white')
+      GetBookList()
+    }
+  }
+  let SweetAlert = (type, text, sbgc, sc) => {
+    if ((type = 'success')) {
+      document.getElementById('notifications').style.display = 'block'
+      document.getElementById('notifications').innerText = text
+      document.getElementById('notifications').style.color = sc
+      document.getElementById('notifications').style.backgroundColor = sbgc
+      document.getElementById('notifications').style.padding = '1rem'
+      setTimeout(function () {
+        document.getElementById('notifications').style.display = 'none'
+      }, 2000)
+    } else if ((type = 'failure')) {
+      document.getElementById('notifications').style.display = 'block'
+      document.getElementById('notifications').innerText = text
+      document.getElementById('notifications').style.color = sc
+      document.getElementById('notifications').style.backgroundColor = sbgc
+      document.getElementById('notifications').style.padding = '1rem'
+      setTimeout(function () {
+        document.getElementById('notifications').style.display = 'none'
+      }, 2000)
+    }
+  }
+  document.getElementById('add_book_btn').addEventListener('click', AddBook)
+</script>
