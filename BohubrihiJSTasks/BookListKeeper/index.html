@@ -45,17 +45,30 @@
 </html>
 <script>
   const bookArr = []
+  let Validate = (arr) => {
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i].value == '') {
+        console.log(arr[i].value)
+        SweetAlert('failure', 'Please fill up all the fields!', 'red', 'white')
+        return false
+      }
+    }
+    return true
+  }
   let AddBook = () => {
     var form = document.querySelector('#myForm')
     var elements = form.elements
     var elemsArr1 = Array.from(elements)
-    var book = {
-      title: elemsArr1[0].value,
-      author: elemsArr1[1].value,
-      isbn: elemsArr1[2].value,
+    if (Validate(elemsArr1)) {
+      var book = {
+        title: elemsArr1[0].value,
+        author: elemsArr1[1].value,
+        isbn: elemsArr1[2].value,
+      }
+      bookArr.push(book)
+      SweetAlert('success', 'Book Entry Added!', 'green', 'white')
+      form.reset()
     }
-    bookArr.push(book)
-    SweetAlert('success', 'Book Entry Added!', 'green', 'white')
 
     GetBookList()
   }
@@ -84,7 +97,7 @@
       document.getElementById('notifications').style.padding = '1rem'
       setTimeout(function () {
         document.getElementById('notifications').style.display = 'none'
-      }, 2000)
+      }, 1000)
     } else if ((type = 'failure')) {
       document.getElementById('notifications').style.display = 'block'
       document.getElementById('notifications').innerText = text
@@ -93,7 +106,7 @@
       document.getElementById('notifications').style.padding = '1rem'
       setTimeout(function () {
         document.getElementById('notifications').style.display = 'none'
-      }, 2000)
+      }, 1000)
     }
   }
   document.getElementById('add_book_btn').addEventListener('click', AddBook)
