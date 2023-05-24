@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github Finder (Bohubrihi)</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar sticky-top">
+      <h4 style="margin: 0 20%;">Github Finder</h4>
+    </nav>
+    <div class="container pt-3">
+      <div class="card">
+        <div class="card-body">
+          <h3>Search Github Users</h3>
+          <h6>Enter a username to fetch user profile and repos</h6>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Github Username"
+          />
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-block btn-success">Search</button>
+        </div>
+      </div>
+    </div>
+    <div class="container pt-3">
+      <div class="card">
+        <div class="row">
+          <div class="col-lg-3">
+            <img
+              class="img"
+              src="https://milil.com.bd/wp-content/uploads/elementor/thumbs/Zia-Mohammad-Gias-Uddin-Copy-pxtz5e71clzu29wwiw780a0qxfowqx2uxszcxfz0g0.jpeg"
+              alt=""
+            />
+            <a href="#" class="btn btn-block btn-primary">
+              View Profile
+            </a>
+          </div>
+          <div class="col-lg-9">
+            <div class="pt-3">
+              <ul>
+                <li>Public Repos : 44</li>
+                <li>Public Gists : 26</li>
+                <li>Followers: 10</li>
+                <li>Following: 12</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h6>Company:</h6>
+                <h6>Website/Blog:</h6>
+                <h6>Location:</h6>
+              </div>
+              <div class="card-footer">
+                <h6>Member Since:</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<style>
+  .navbar {
+    background-color: #007bff;
+    color: white;
+  }
+  .img {
+    height: 16rem;
+    width: 16rem;
+    padding: 1rem;
+  }
+  ul li {
+    border-radius: 10px;
+    padding: 0.5rem;
+    color: white;
+    display: inline;
+  }
+
+  li:nth-child(6n + 1) {
+    background-color: rgb(3, 155, 3);
+  }
+  li:nth-child(6n + 2) {
+    background-color: rgb(103, 110, 238);
+  }
+  li:nth-child(6n + 3) {
+    background-color: rgb(137, 133, 9);
+  }
+  li:nth-child(6n + 4) {
+    background-color: rgb(255, 52, 52);
+  }
+</style>
+<script></script>
