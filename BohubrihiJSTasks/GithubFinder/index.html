@@ -17,8 +17,10 @@
     <nav class="navbar sticky-top">
       <h4 style="margin: 0 20%;">Github Finder</h4>
     </nav>
+
     <div class="container pt-3">
       <div class="card">
+        <p id="notifications"></p>
         <div class="card-body">
           <h3>Search Github Users</h3>
           <h6>Enter a username to fetch user profile and repos</h6>
@@ -135,41 +137,72 @@
   let AvatarImage =
     'https://t3.ftcdn.net/jpg/05/16/27/58/240_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg'
   let GetGitInfo = () => {
-    document.getElementById('infosection').style.display = 'block'
     let user = document.getElementById('user_input').value
 
     fetch(`https://api.github.com/users/${user}`)
       .then((res) => res.json())
       .then((data) => {
-        document.getElementById('user_image').src =
-          data.avatar_url != null ? data.avatar_url : AvatarImage
-        document.getElementById('user_profilelink').href = data.html_url
-        document.getElementById('user_publicRepo').innerText = data.public_gists
-        document.getElementById('user_publicGists').innerText =
-          data.public_repos
-        document.getElementById('user_followers').innerText = data.followers
-        document.getElementById('user_following').innerText = data.following
-        document.getElementById('user_company').innerText =
-          data.company != null ? data.company : 'NA'
-
-        if (data.blog != '') {
-          document.getElementById('user_website_link').href =
-            'https://' + data.blog
-          document.getElementById('user_website_link').innerText = data.blog
+        if (data.message == 'Not Found') {
+          document.getElementById('infosection').style.display = 'none'
+          SweetAlert('failure', 'User Not Found!', 'red', 'white')
+          document.getElementById('user_input').value = ''
         } else {
-          document.getElementById('user_website_text').innerText = 'NA'
-        }
+          document.getElementById('infosection').style.display = 'block'
+          document.getElementById('user_image').src =
+            data.avatar_url != null ? data.avatar_url : AvatarImage
+          document.getElementById('user_profilelink').href = data.html_url
+          document.getElementById('user_publicRepo').innerText =
+            data.public_gists
+          document.getElementById('user_publicGists').innerText =
+            data.public_repos
+          document.getElementById('user_followers').innerText = data.followers
+          document.getElementById('user_following').innerText = data.following
+          document.getElementById('user_company').innerText =
+            data.company != null ? data.company : 'NA'
 
-        document.getElementById('user_location').innerText =
-          data.location != null ? data.location : 'NA'
-        const date = new Date(data.created_at)
-        const formattedDate = date.toLocaleDateString('en-US', {
-          month: 'long',
-          day: 'numeric',
-          year: 'numeric',
-        })
-        document.getElementById('user_created').innerText = formattedDate
+          if (data.blog != '') {
+            document.getElementById('user_website_link').href =
+              'https://' + data.blog
+            document.getElementById('user_website_link').innerText = data.blog
+          } else {
+            document.getElementById('user_website_link').href = ''
+            document.getElementById('user_website_link').innerText = ''
+            document.getElementById('user_website_text').innerText = 'NA'
+          }
+
+          document.getElementById('user_location').innerText =
+            data.location != null ? data.location : 'NA'
+          const date = new Date(data.created_at)
+          const formattedDate = date.toLocaleDateString('en-US', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+          })
+          document.getElementById('user_created').innerText = formattedDate
+          document.getElementById('user_input').value = ''
+        }
       })
+  }
+  let SweetAlert = (type, text, sbgc, sc) => {
+    if ((type = 'success')) {
+      document.getElementById('notifications').style.display = 'block'
+      document.getElementById('notifications').innerText = text
+      document.getElementById('notifications').style.color = sc
+      document.getElementById('notifications').style.backgroundColor = sbgc
+      document.getElementById('notifications').style.padding = '1rem'
+      setTimeout(function () {
+        document.getElementById('notifications').style.display = 'none'
+      }, 1500)
+    } else if ((type = 'failure')) {
+      document.getElementById('notifications').style.display = 'block'
+      document.getElementById('notifications').innerText = text
+      document.getElementById('notifications').style.color = sc
+      document.getElementById('notifications').style.backgroundColor = sbgc
+      document.getElementById('notifications').style.padding = '1rem'
+      setTimeout(function () {
+        document.getElementById('notifications').style.display = 'none'
+      }, 1500)
+    }
   }
   document.getElementById('search_btn').addEventListener('click', GetGitInfo)
 </script>
