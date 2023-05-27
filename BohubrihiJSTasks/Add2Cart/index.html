@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add 2 Cart (Bohubrihi)</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+</head>
+
+<body>
+    <nav class="navbar sticky-top">
+        <h4 style="margin: 0 5%;">My E-commerce</h4>
+    </nav>
+    <div class="row" style="margin: 25px 10%;">
+        <div class="col-lg-9">
+            <div class="products" id="products_list"></div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card-body">
+                <div class="card-header">
+                    My Cart
+                </div>
+                <div class="card-body" id="cart_list">
+                </div>
+                <div class="card-footer" id="cart_total_section" style="display: none;">
+                    Total<span style="float: right;" id="cart_total_price">0 Tk</span>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
+<style>
+    .navbar {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .products {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        justify-items: center;
+    }
+
+    .products_image {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .cart_items {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        border-bottom: 1px solid rgb(228, 227, 227);
+    }
+</style>
+<script>
+    let ProductArr = []
+    let cartArr = []
+    class Product {
+        constructor(title, price, img) {
+            this.prod_title = title;
+            this.prod_price = price;
+            this.prod_img = img
+        }
+    }
+    async function GetProducts() {
+        let res = await fetch(`https://fakestoreapi.com/products`)
+        let data = await res.json()
+        data.forEach(item => {
+            let product = new Product(item.title, item.price, item.image)
+            ProductArr.push(product)
+        })
+        var products = document.getElementById('products_list')
+        ProductArr.forEach((item, index) => {
+            var card = document.createElement('div')
+            card.className = 'card'
+            card.style = 'width:23rem;height:30rem'
+
+            var cardbody = document.createElement('div')
+            cardbody.className = 'card-body'
+
+            var cardheader = document.createElement('div')
+            cardheader.className = 'card-header'
+            var cardfooter = document.createElement('div')
+            cardfooter.className = 'card-footer'
+            cardfooter.innerHTML =
+                '<button class="btn btn-block btn-success" onclick="Add_To_Cart(' +
+                index +
+                ')">Add To Cart</button>'
+
+            var img = document.createElement('img')
+            img.className = 'products_image'
+            img.src = item.prod_img
+            var hr = document.createElement('hr')
+            var h61 = document.createElement('h6')
+            h61.innerText = item.prod_title
+            h61.style = 'height:3rem'
+            var h62 = document.createElement('h6')
+            h62.innerText = 'Price'
+            var span = document.createElement('span')
+            span.style = 'float: right'
+            span.innerText = item.prod_price + '  Tk'
+
+            cardheader.appendChild(h61)
+            cardheader.appendChild(hr)
+            h62.appendChild(span)
+            cardheader.appendChild(h62)
+
+            card.appendChild(cardbody)
+            card.appendChild(cardheader)
+            card.appendChild(cardfooter)
+
+            cardbody.appendChild(img)
+            products.appendChild(card)
+        })
+    }
+    GetProducts()
+    let Add_To_Cart = (id) => {
+        cartArr.push(ProductArr[id])
+        CalcCardTotal()
+        clearCart()
+        GetCart()
+    }
+    let Delete_From_Cart = (id) => {
+        if (id > -1) {
+            cartArr.splice(id, 1)
+        }
+        CalcCardTotal()
+        clearCart()
+        GetCart()
+    }
+    let GetCart = () => {
+        cartArr.forEach(function (item, index) {
+            var cart = document.getElementById('cart_list')
+            var cartitems = document.createElement('div')
+            cartitems.className = 'cart_items'
+            var cart_prod_name = document.createElement('div')
+            cart_prod_name.style = 'width:10rem;'
+            cart_prod_name.innerText = item.prod_title
+            var cart_prod_price = document.createElement('div')
+            cart_prod_price.style = 'width:5rem;text-align:right;'
+            cart_prod_price.innerText = item.prod_price + '  Tk'
+            var cart_prod_button = document.createElement('div')
+            cart_prod_button.innerHTML =
+                '<a href="#" onclick="Delete_From_Cart(' +
+                index +
+                ')">X</a>'
+
+            cartitems.appendChild(cart_prod_name)
+            cartitems.appendChild(cart_prod_price)
+            cartitems.appendChild(cart_prod_button)
+            cart.appendChild(cartitems)
+        })
+    }
+    let clearCart = () => {
+        var cartlist = document.getElementById('cart_list')
+        while (cartlist.firstChild) {
+            cartlist.removeChild(cartlist.firstChild)
+        }
+    }
+    let CalcCardTotal = () => {
+        cartArr.length > 0 ? document.getElementById('cart_total_section').style = 'display:block' : document.getElementById('cart_total_section').style = 'display:none'
+        let total = cartArr.reduce((accumulator, curr) => {
+            return accumulator + curr.prod_price
+        }, 0)
+        document.getElementById('cart_total_price').innerText = total + '  Tk'
+    }
+</script>

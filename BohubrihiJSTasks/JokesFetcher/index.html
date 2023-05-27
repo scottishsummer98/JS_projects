@@ -22,20 +22,31 @@
   </body>
 </html>
 <script>
-  let getJokes = (e) => {
-    let xhr = new XMLHttpRequest()
-    xhr.open('GET', `https://api.chucknorris.io/jokes/random`, true)
-    xhr.onprogress = function () {
-      document.getElementById('result').innerText = 'Loading..............'
-    }
-    xhr.onload = function () {
-      if (this.status === 200) {
-        let data = JSON.parse(this.responseText)
-        let Joke = data.value
-        document.getElementById('result').innerText = Joke
-      }
-    }
-    xhr.send()
+  //Using AJAX
+  // let getJokes = (e) => {
+  //   let xhr = new XMLHttpRequest()
+  //   xhr.open('GET', `https://api.chucknorris.io/jokes/random`, true)
+  //   xhr.onprogress = function () {
+  //     document.getElementById('result').innerText = 'Loading..............'
+  //   }
+  //   xhr.onload = function () {
+  //     if (this.status === 200) {
+  //       let data = JSON.parse(this.responseText)
+  //       let Joke = data.value
+  //       document.getElementById('result').innerText = Joke
+  //     }
+  //   }
+  //   xhr.send()
+  // }
+
+  //USING Fetch API
+
+  async function getJokes() {
+    let response = await fetch('https://api.chucknorris.io/jokes/random')
+    let data = await response.json()
+    let Joke = data.value
+    document.getElementById('result').innerText = Joke
   }
+
   document.getElementById('btn_Jokes').addEventListener('click', getJokes)
 </script>
